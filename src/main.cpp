@@ -3,7 +3,7 @@
 int led = 5;
 
 int button1 = A0;
-int brightness = 0;  // how bright the LED is
+int brightness = 0;  
 int led1 = 0 ;
 //#define debug
 
@@ -23,9 +23,8 @@ void loop() {
   
   if (led1 == 1 && brightness < 5) {
     for (brightness=0; brightness < 256; brightness++){
-    // Schreibe den Wert von "i" auf den LED-Pin
     analogWrite(led, brightness);
-    // Warte 10 Millisekunden
+    // Warte 5 Millisekunden
     delay(5);
     #ifdef debug
     Serial.println(brightness);
@@ -36,9 +35,8 @@ void loop() {
 
   if (led1 == 0 && brightness > 5) {
     for (brightness=255; brightness > -1; brightness--){
-    // Schreibe den Wert von "i" auf den LED-Pin
     analogWrite(led, brightness);
-    // Warte 10 Millisekunden
+    // Warte 5 Millisekunden
     delay(5);
     #ifdef debug
     Serial.println(brightness);
